@@ -8,6 +8,7 @@ import { MethodBox } from "./home/MethodBox";
 import TextChange from "./home/TextChange";
 import { BoxData, PlateformImages, Solutions } from "./home/data/ImgData";
 import { PlatformBox } from "./home/PlatformBox";
+import Link from "next/link";
 
 export const Myhome = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -16,53 +17,41 @@ export const Myhome = () => {
   const Platforms = ["MENS", "WOMENS", "KIDS", 
   "ATHLETIC", "CASUAL",];
 
-  const NavbarItems = [
+  const NavigationTab = [
     {
-      title: "All",
-      content: ["shviam", "dubey"],
+      title: "All Shoes",
+      content: ["Running Shoes", "Casual Shoes", "Formal Shoes", "Sneakers", "Sandals", "Boots"],
     },
     {
-      title: "Desks",
-      content: ["shviam", "dubey"],
+      title: "Men's Shoes",
+      content: ["Running Shoes", "Casual Shoes", "Formal Shoes", "Sneakers", "Boots"],
     },
     {
-      title: "Office chais",
-      content: ["shviam", "dubey"],
+      title: "Women's Shoes",
+      content: ["Running Shoes", "Casual Shoes", "Formal Shoes", "Sneakers", "Sandals", "Boots"],
     },
     {
-      title: "Desks",
-      content: ["shviam", "dubey"],
+      title: "Sports Shoes",
+      content: ["Running Shoes", "Sneakers"],
     },
     {
-      title: "Armchairs and Couches",
-      content: ["shviam", "dubey"],
+      title: "Sandals",
+      content: ["Casual Sandals", "Formal Sandals", "Sport Sandals"],
     },
     {
-      title: "Storage",
-      content: ["shviam", "dubey"],
+      title: "Boots",
+      content: ["Ankle Boots", "Knee-High Boots", "Snow Boots"],
     },
     {
-      title: "Tables",
-      content: ["shviam", "dubey"],
+      title: "Slippers",
+      content: ["Indoor Slippers", "Outdoor Slippers"],
     },
     {
-      title: "Meeting tabes",
-      content: ["shviam", "dubey"],
-    },
-    {
-      title: "Lighting",
-      content: ["shviam", "dubey"],
-    },
-    {
-      title: "Office accessories",
-      content: ["shviam", "dubey"],
-    },
-    {
-      title: "Miscallaneous",
-      content: ["shviam", "dubey"],
+      title: "Accessories",
+      content: ["Shoe Care Products", "Insoles", "Laces"],
     },
   ];
-
+  
   const handleSelect = (index: React.SetStateAction<number>) => {
     setActiveTab(index);
   };
@@ -79,7 +68,7 @@ export const Myhome = () => {
     <>
       <div className="w-full px-4 md:h-[730px] h-[550px] relative ">
         <div className="w-full md:flex justify-around items-center px-2 h-10  hidden absolute z-10 left-0 top-0 ">
-          {NavbarItems?.map(({ content, title }, index) => {
+          {NavigationTab?.map(({ content, title }, index) => {
             return (
               <div className="relative group">
                 <p
@@ -88,9 +77,9 @@ export const Myhome = () => {
                 >
                   {title}
                 </p>
-                <div className="absolute cursor-pointer  px-1 py-1 rounded-sm text-center bg-white h-fit hidden group-hover:block ">
+                <div className="absolute   px-5 hover:z-10  py-1 rounded-sm text-center bg-white h-fit hidden group-hover:block ">
                   {content.map((text, i) => (
-                    <p key={i}>{text}</p>
+                    <p key={i} className="hover:text-[#4eb9e7] cursor-pointer py-[2px] whitespace-nowrap" >{text}</p>
                   ))}
                 </div>
               </div>
@@ -105,7 +94,7 @@ export const Myhome = () => {
           loading="lazy"
         />
         <div className="md:w-[610px] w-[95%] px-8 py-8  bg-white rounded-2xl absolute bottom-10 md:bottom-16 left-[10px] md:left-[140px] h-fit md:h-[420px] mx-auto z-10 ">
-          <div className="flex items-center absolute left-0 md:-top-16  -top-10">
+          <div className="flex items-center absolute z-1 left-0 md:-top-16  -top-10">
             <button className="w-fit py-4 md:py-7 px-4 md:px-6 text-[13px]  md:text-[17px] bg-white rounded-t-[14px]">
               Remove
             </button>
@@ -117,9 +106,9 @@ export const Myhome = () => {
             </button>
           </div>
 
-          <h1 className="md:text-[40px] text-[26px]  md:leading-[48px]  ">
+          <h1 className="md:text-[40px] text-[26px] text-[#3994ba] md:leading-[48px]  ">
           The premier{" "}
-            <span className="text-[#3994ba] border-b-2 border-[#3994ba]">
+            <span className="text-green-500 border-b-2 border-green-500">
             destination
             </span>{" "}
             for stylish and sustainable shoe shopping
@@ -150,7 +139,8 @@ export const Myhome = () => {
         <div className=" mt-4 grid md:grid-cols-6 gap-3 grid-cols-3">
           {Platforms?.map((el, index) => {
             return (
-              <div
+              <Link
+              href={"/shoes"}
                 key={index}
                 onClick={() => handleSelect(index)}
                 className={`md:w-[200px] w-[100px] text-gray-600 text-center cursor-pointer py-[1px] transition ease-in-out duration-150 text-[11px] rounded-md md:text-[13px] ${
@@ -158,14 +148,14 @@ export const Myhome = () => {
                 }`}
               >
                 {el}
-              </div>
+              </Link>
             );
           })}
         </div>
         <div className=" grid md:grid-cols-4 grid-cols-2 mt-3 gap-3">
           {PlateformImages?.map((el, index) => {
             return (
-              <PlatformBox key={index} img={el} toptext="11 KG OF CO2 SAVED" />
+              <PlatformBox key={index} img={el.img} name={el.name} toptext="Saved upto 2k" />
             );
           })}
         </div>
@@ -245,7 +235,7 @@ export const Myhome = () => {
         </div>
 
         <h1 className="md:text-[50px] text-[24px] mt-10 md:mt-20 text-[#3994ba]">
-          Furnishing Solutions
+        Discover collection of Shoes
         </h1>
         <div className=" grid md:grid-cols-4 grid-cols-2 mt-3 gap-3">
           {Solutions?.map((el, index) => {

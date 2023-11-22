@@ -4,7 +4,7 @@ import React from "react";
 export const MethodBox = ({ icon, work, detail }:any) => {
   return (
     <div className="w-full px-2 py-4 h-fit cursor-pointer ">
-      <div className="w-[200px] border h-[200px] relative">
+      <div className="md:w-[200px] border w-[120px] h-[120px] md:h-[200px] relative">
       <Image src={icon} fill alt="img" />
       </div>
       <div className="md:w-[140px] w-[100px] mt-5 h-[1px] bg-black"></div>

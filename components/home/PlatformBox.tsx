@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { LuEuro } from "react-icons/lu";
-export const PlatformBox = ({ img, toptext }:any) => {
+export const PlatformBox = ({ img, toptext ,name }:any) => {
   return (
     <div className="w-full h-fit">
       <div className="w-full h-[240px] md:h-[435px]  rounded-md relative ">
@@ -18,7 +18,8 @@ export const PlatformBox = ({ img, toptext }:any) => {
       </div>
       <div className="w-full h-[150px] ">
         <p className="md:text-[18px] text-[14px] md:leading-none leading-[17px] py-2 text-[#307e9f] ">
-          Black and aluminum designer chair
+       
+          {name}
         </p>
         <p className="md:text-[11px] text-[10px] text-gray-500">
           COMFORTABLE CHAIRS
