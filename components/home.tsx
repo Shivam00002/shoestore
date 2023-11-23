@@ -9,6 +9,7 @@ import TextChange from "./home/TextChange";
 import { BoxData, PlateformImages, Solutions } from "./home/data/ImgData";
 import { PlatformBox } from "./home/PlatformBox";
 import Link from "next/link";
+import { Globe } from "./home/Globe";
 
 export const Myhome = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -67,7 +68,7 @@ export const Myhome = () => {
   return (
     <>
       <div className="w-full px-4 md:h-[730px] h-[550px] relative ">
-        <div className="w-full md:flex justify-around items-center px-2 h-10  hidden absolute z-10 left-0 top-0 ">
+        <div className="w-full md:flex justify-around items-center px-2 h-10  shadow-lg  hidden absolute z-10 left-0 top-0 ">
           {NavigationTab?.map(({ content, title }, index) => {
             return (
               <div className="relative group">
@@ -131,6 +132,12 @@ export const Myhome = () => {
           </div>
         </div>
       </div>
+
+
+<Globe/>
+
+
+      
       <div className="md:w-full  w-full h-fit py-4  px-2 mx-auto">
         <h1 className="md:text-[30px] text-[20px] text-[#3994ba]">
           Available now on the platform
@@ -139,8 +146,8 @@ export const Myhome = () => {
         <div className=" mt-4 grid md:grid-cols-6 gap-3 grid-cols-3">
           {Platforms?.map((el, index) => {
             return (
-              <Link
-              href={"/shoes"}
+              <div
+              
                 key={index}
                 onClick={() => handleSelect(index)}
                 className={`md:w-[200px] w-[100px] text-gray-600 text-center cursor-pointer py-[1px] transition ease-in-out duration-150 text-[11px] rounded-md md:text-[13px] ${
@@ -148,16 +155,21 @@ export const Myhome = () => {
                 }`}
               >
                 {el}
-              </Link>
+              </div>
             );
           })}
         </div>
         <div className=" grid md:grid-cols-4 grid-cols-2 mt-3 gap-3">
           {PlateformImages?.map((el, index) => {
             return (
-              <PlatformBox key={index} img={el.img} name={el.name} toptext="Saved upto 2k" />
+            <Link
+            href={"/shoes"}
+            >
+            <PlatformBox key={index} img={el.img} name={el.name} toptext="Saved upto 2k" />
+            </Link>
             );
           })}
+
         </div>
         <div className="w-full  mt-10 md:mt-20 h-[200px] px-2 md:px-20  grid place-content-center  bg-[#E7F2F0]">
           <div className="md:flex items-center   md:gap-x-52  justify-between">

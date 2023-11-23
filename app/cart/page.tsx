@@ -27,7 +27,7 @@ function Cart() {
 
 
   return (
-    <div className="container">
+    <div className="container ">
       <div className="grid grid-cols-3 mt-5 gap-10">
         <div className="col-span-2">
           {cart.map((item) => (
