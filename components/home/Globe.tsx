@@ -103,7 +103,7 @@ export const Globe = () => {
               </div>
             </div>
 
-            <div className=" md:px-10 md:py-10 border border-[#390765e8] mx-auto rotate rounded-full mt-[-109px] md:left-[48px]   relative top-[85px]  w-[18em] h-[18em] md:w-[28em] md:h-[28em]">
+            <div className=" md:px-10 md:py-10 border border-[#390765e8] mx-auto rotate rounded-full mt-[-109px] md:left-[100px]   relative top-[85px]  w-[18em] h-[18em] md:w-[28em] md:h-[28em]">
               <div className="  rounded-full absolute md:translate-x-[-48px]   right-[17px]">
                 <div className="md:w-7 md:h-7 w-6 h-6 relative rounded-full ">
                   {" "}

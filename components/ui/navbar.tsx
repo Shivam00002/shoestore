@@ -11,8 +11,8 @@ export const Navbar = () => {
   const { cart } = useStore();
 
   return (
-    <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
-      <nav className="container flex h-14 items-center w-full">
+    <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur container  mx-auto">
+      <nav className=" flex h-14 items-center w-full">
         <div className="flex justify-between items-center w-full">
           <Link href={"/shoes"} className="font-semibold text-xl">
             ShoeStore

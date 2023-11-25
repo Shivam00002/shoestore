@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   
   return (
-    <html lang="en">
+    <html lang="en ">
       <AuthProvider>
         <body className={spaceGrotesk.className}>
           <ThemeProvider
@@ -31,6 +31,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Navbar />
+            
             {children}
           </ThemeProvider>
           <Toaster />

@@ -6,7 +6,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex container mt-10 gap-5">
+    <div className="flex container mt-10 mx-auto gap-5">
      
       <div className="flex-1 ">{children}</div>
     </div>
