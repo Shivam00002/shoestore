@@ -16,6 +16,7 @@ export const Checkout = ({ item }:{item:Shoe[]}) => {
   const handleClick = async () => {
     setIsLoading(true);
 
+
     try {
       const response = await fetch("/api/checkout_sessions", {
         method: "POST",
