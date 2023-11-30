@@ -35,6 +35,7 @@ export const Myhome = () => {
       title: "Sports Shoes",
       content: ["Running Shoes", "Sneakers"],
     },
+
     {
       title: "Sandals",
       content: ["Casual Sandals", "Formal Sandals", "Sport Sandals"],
