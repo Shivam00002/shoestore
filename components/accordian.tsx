@@ -17,6 +17,7 @@ export const AccordianComp = ({
     <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
         <AccordionTrigger>{title}</AccordionTrigger>
+
         <AccordionContent>{children}</AccordionContent>
       </AccordionItem>
     </Accordion>
