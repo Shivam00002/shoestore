@@ -8,6 +8,7 @@ import { Shoe } from "@/types/shoes";
 import { useStore } from "@/zustand/useStore";
 import Link from "next/link";
 
+
 export const CartItem = ({ item }: { item: Shoe }) => {
   const { removeFromCart, selectQuantity } = useStore();
 
